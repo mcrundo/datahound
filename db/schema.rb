@@ -10,8 +10,56 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.1].define(version: 0) do
+ActiveRecord::Schema[8.1].define(version: 2026_04_08_201605) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_catalog.plpgsql"
 
+  create_table "customers", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.string "name", null: false
+    t.bigint "region_id", null: false
+    t.datetime "updated_at", null: false
+    t.index "lower((name)::text)", name: "index_customers_on_lower_name", unique: true
+    t.index ["region_id"], name: "index_customers_on_region_id"
+    t.check_constraint "name::text <> ''::text", name: "customers_name_not_empty"
+  end
+
+  create_table "quotes", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.bigint "customer_id", null: false
+    t.decimal "normalized_rate", precision: 8, scale: 6, null: false
+    t.decimal "rate", precision: 8, scale: 6, null: false
+    t.bigint "supplier_id", null: false
+    t.boolean "tax_included", default: false, null: false
+    t.datetime "updated_at", null: false
+    t.index ["customer_id", "supplier_id"], name: "index_quotes_on_customer_id_and_supplier_id", unique: true
+    t.index ["customer_id"], name: "index_quotes_on_customer_id"
+    t.index ["supplier_id"], name: "index_quotes_on_supplier_id"
+    t.check_constraint "normalized_rate > 0::numeric", name: "quotes_normalized_rate_positive"
+    t.check_constraint "rate > 0::numeric", name: "quotes_rate_positive"
+  end
+
+  create_table "regions", force: :cascade do |t|
+    t.string "abbreviation", null: false
+    t.string "country_code", null: false
+    t.datetime "created_at", null: false
+    t.decimal "tax_rate", precision: 5, scale: 2, null: false
+    t.datetime "updated_at", null: false
+    t.index ["abbreviation", "country_code"], name: "index_regions_on_abbreviation_and_country_code", unique: true
+    t.check_constraint "abbreviation::text <> ''::text", name: "regions_abbreviation_not_empty"
+    t.check_constraint "country_code::text ~ '^[A-Z]{2}$'::text", name: "regions_country_code_format"
+    t.check_constraint "tax_rate >= 0::numeric", name: "regions_tax_rate_non_negative"
+  end
+
+  create_table "suppliers", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.string "name", null: false
+    t.datetime "updated_at", null: false
+    t.index "lower((name)::text)", name: "index_suppliers_on_lower_name", unique: true
+    t.check_constraint "name::text <> ''::text", name: "suppliers_name_not_empty"
+  end
+
+  add_foreign_key "customers", "regions"
+  add_foreign_key "quotes", "customers"
+  add_foreign_key "quotes", "suppliers"
 end
