@@ -1,0 +1,20 @@
+fictora_yukon:
+  customer: fictora
+  supplier: yukon
+  rate: 0.0662
+  tax_included: true
+  normalized_rate: 0.061581
+
+fictora_good_energy:
+  customer: fictora
+  supplier: good_energy
+  rate: 0.0723
+  tax_included: false
+  normalized_rate: 0.0723
+
+nullpoint_acora:
+  customer: nullpoint
+  supplier: acora
+  rate: 0.0704
+  tax_included: true
+  normalized_rate: 0.067048

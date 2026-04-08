@@ -1,0 +1,14 @@
+massachusetts:
+  abbreviation: MA
+  country_code: US
+  tax_rate: 7.5
+
+texas:
+  abbreviation: TX
+  country_code: US
+  tax_rate: 5.0
+
+connecticut:
+  abbreviation: CT
+  country_code: US
+  tax_rate: 4.5
