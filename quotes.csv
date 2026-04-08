@@ -1,0 +1,442 @@
+"Customer","Supplier","Quote","Tax Included","State","Tax Rate"
+"Fictora Consulting Group","Yukon Electric",0.0662,"Y","MA",7.5
+"Fictora Consulting Group","Good Energy",0.0723,"N","MA",7.5
+"Fictora Consulting Group","Electricon",0.0688,"Y","MA",7.5
+"Fictora Consulting Group","Acora",0.0532,"Y","MA",7.5
+"Fictora Consulting Group","Green Energy",0.0727,"N","MA",7.5
+"Imaginary Axis Solutions","Sure Energy",0.0667,"Y","NJ",7
+"Imaginary Axis Solutions","Freedom National",0.0783,"Y","NJ",7
+"Imaginary Axis Solutions","Pecona Energy",0.0791,"N","NJ",7
+"Nominal Dynamics","Pecona Energy",0.0711,"Y","CT",4.5
+"Nominal Dynamics","World Energy",0.0536,"N","CT",4.5
+"Nominal Dynamics","ChampStar",0.0562,"N","CT",4.5
+"Nominal Dynamics","Electricon",0.0656,"N","CT",4.5
+"Nominal Dynamics","Acora",0.0792,"Y","CT",4.5
+"Nominal Dynamics","Good Energy",0.0593,"N","CT",4.5
+"Nominal Dynamics","Freedom National",0.0632,"Y","CT",4.5
+"NullPoint Enterprises","Pecona Energy",0.0704,"Y","TX",5
+"NullPoint Enterprises","Sure Energy",0.0792,"Y","TX",5
+"Mockline Business Services","Yukon Electric",0.062,"Y","CT",4.5
+"Mockline Business Services","Good Energy",0.0546,"N","CT",4.5
+"Mockline Business Services","Acora",0.0752,"Y","CT",4.5
+"PseudoCore Industries","Yukon Electric",0.0681,"N","TX",5
+"PseudoCore Industries","Sure Energy",0.0571,"Y","TX",5
+"Fabricon Strategy Group","Yukon Electric",0.0608,"N","MA",7.5
+"Fabricon Strategy Group","Good Energy",0.0774,"Y","MA",7.5
+"Fabricon Strategy Group","World Energy",0.0695,"Y","MA",7.5
+"Fabricon Strategy Group","Freedom National",0.069,"N","MA",7.5
+"Fabricon Strategy Group","Electricon",0.0582,"Y","MA",7.5
+"Testoria Operations","Sure Energy",0.0556,"N","TX",5
+"Testoria Operations","Acora",0.0534,"N","TX",5
+"Testoria Operations","ChampStar",0.0764,"N","TX",5
+"Testoria Operations","Pecona Energy",0.0619,"Y","TX",5
+"SimuWorks Consulting","ChampStar",0.0517,"N","CT",4.5
+"SimuWorks Consulting","Pecona Energy",0.07,"N","CT",4.5
+"SimuWorks Consulting","Freedom National",0.0707,"Y","CT",4.5
+"Fauxstone Holdings","Electricon",0.0658,"Y","CT",4.5
+"Fauxstone Holdings","ChampStar",0.0787,"Y","CT",4.5
+"Fauxstone Holdings","Pecona Energy",0.077,"Y","CT",4.5
+"ProtoPath Services","Pecona Energy",0.0701,"N","MD",5.1
+"ProtoPath Services","World Energy",0.0746,"N","MD",5.1
+"ProtoPath Services","Freedom National",0.0579,"N","MD",5.1
+"ProtoPath Services","Yukon Electric",0.0734,"N","MD",5.1
+"Samplegate Solutions","Pecona Energy",0.069,"N","MD",5.1
+"Samplegate Solutions","ChampStar",0.0568,"Y","MD",5.1
+"Samplegate Solutions","Acora",0.067,"Y","MD",5.1
+"Samplegate Solutions","Electricon",0.0534,"Y","MD",5.1
+"Samplegate Solutions","Freedom National",0.067,"Y","MD",5.1
+"Samplegate Solutions","Green Energy",0.0632,"Y","MD",5.1
+"Samplegate Solutions","Sure Energy",0.0785,"Y","MD",5.1
+"Samplegate Solutions","Yukon Electric",0.0509,"N","MD",5.1
+"Tempus Ridge Consulting","Freedom National",0.0768,"Y","TX",5
+"Tempus Ridge Consulting","ChampStar",0.0649,"N","TX",5
+"Tempus Ridge Consulting","Green Energy",0.079,"Y","TX",5
+"Tempus Ridge Consulting","World Energy",0.054,"Y","TX",5
+"Mockwave Technologies","Electricon",0.0742,"Y","MD",5.1
+"Mockwave Technologies","Acora",0.0532,"N","MD",5.1
+"Mockwave Technologies","Freedom National",0.0701,"N","MD",5.1
+"Fictitious Peak Systems","ChampStar",0.0772,"Y","CT",4.5
+"Fictitious Peak Systems","Freedom National",0.0744,"N","CT",4.5
+"Fictitious Peak Systems","Acora",0.0682,"N","CT",4.5
+"Fictitious Peak Systems","World Energy",0.0578,"N","CT",4.5
+"Fictitious Peak Systems","Electricon",0.065,"Y","CT",4.5
+"Fictitious Peak Systems","Green Energy",0.0747,"N","CT",4.5
+"Fictitious Peak Systems","Good Energy",0.0735,"N","CT",4.5
+"Simulon Business Group","ChampStar",0.0663,"Y","TX",5
+"Simulon Business Group","Good Energy",0.0685,"Y","TX",5
+"Simulon Business Group","World Energy",0.0603,"Y","TX",5
+"Simulon Business Group","Electricon",0.0782,"Y","TX",5
+"Simulon Business Group","Freedom National",0.0627,"N","TX",5
+"Simulon Business Group","Acora",0.056,"Y","TX",5
+"FauxBridge Operations","ChampStar",0.0574,"Y","MA",7.5
+"FauxBridge Operations","World Energy",0.0549,"Y","MA",7.5
+"FauxBridge Operations","Pecona Energy",0.0536,"N","MA",7.5
+"FauxBridge Operations","Yukon Electric",0.0796,"Y","MA",7.5
+"TestOria Enterprises","Pecona Energy",0.0632,"Y","CT",4.5
+"TestOria Enterprises","Green Energy",0.0697,"Y","CT",4.5
+"TestOria Enterprises","Yukon Electric",0.0737,"N","CT",4.5
+"TestOria Enterprises","Freedom National",0.0655,"Y","CT",4.5
+"Imagix Consulting Co.","Freedom National",0.0691,"N","MD",5.1
+"Imagix Consulting Co.","Good Energy",0.0612,"Y","MD",5.1
+"Imagix Consulting Co.","Yukon Electric",0.0645,"N","MD",5.1
+"Pseudonym Logistics","World Energy",0.071,"Y","NJ",7
+"Pseudonym Logistics","Green Energy",0.0597,"Y","NJ",7
+"Pseudonym Logistics","Electricon",0.079,"Y","NJ",7
+"Pseudonym Logistics","ChampStar",0.0719,"N","NJ",7
+"Pseudonym Logistics","Yukon Electric",0.0579,"Y","NJ",7
+"Pseudonym Logistics","Freedom National",0.0574,"N","NJ",7
+"DemoSphere Solutions","Electricon",0.0781,"Y","TX",5
+"DemoSphere Solutions","Green Energy",0.073,"N","TX",5
+"DemoSphere Solutions","Acora",0.0637,"Y","TX",5
+"DemoSphere Solutions","Yukon Electric",0.0536,"Y","TX",5
+"DemoSphere Solutions","World Energy",0.0534,"N","TX",5
+"Fabricated Field Services","Good Energy",0.0783,"N","MD",5.1
+"Fabricated Field Services","Pecona Energy",0.0682,"Y","MD",5.1
+"Fabricated Field Services","ChampStar",0.0794,"N","MD",5.1
+"Fabricated Field Services","Yukon Electric",0.0681,"N","MD",5.1
+"Fabricated Field Services","Green Energy",0.0763,"Y","MD",5.1
+"MockNorth Strategy Group","Sure Energy",0.0668,"Y","NJ",7
+"MockNorth Strategy Group","Yukon Electric",0.0738,"Y","NJ",7
+"Standin Harbor Systems","Acora",0.0667,"N","CT",4.5
+"Standin Harbor Systems","ChampStar",0.0535,"Y","CT",4.5
+"Standin Harbor Systems","Freedom National",0.0623,"N","CT",4.5
+"Standin Harbor Systems","Green Energy",0.0569,"Y","CT",4.5
+"Standin Harbor Systems","Electricon",0.071,"Y","CT",4.5
+"Standin Harbor Systems","Good Energy",0.0505,"N","CT",4.5
+"Standin Harbor Systems","Sure Energy",0.0633,"Y","CT",4.5
+"SimuPoint Consulting","Good Energy",0.0652,"Y","NJ",7
+"SimuPoint Consulting","Sure Energy",0.0768,"Y","NJ",7
+"SimuPoint Consulting","Pecona Energy",0.0731,"N","NJ",7
+"SimuPoint Consulting","Freedom National",0.0563,"Y","NJ",7
+"Fauxline Enterprises","Pecona Energy",0.0754,"N","CT",4.5
+"Fauxline Enterprises","Good Energy",0.0728,"Y","CT",4.5
+"Fauxline Enterprises","Electricon",0.0537,"Y","CT",4.5
+"Testbed Industries","Freedom National",0.0717,"Y","CT",4.5
+"Imaginary Oak Solutions","World Energy",0.0646,"N","MA",7.5
+"Imaginary Oak Solutions","Green Energy",0.0718,"Y","MA",7.5
+"Imaginary Oak Solutions","ChampStar",0.0521,"N","MA",7.5
+"Imaginary Oak Solutions","Good Energy",0.0618,"Y","MA",7.5
+"Imaginary Oak Solutions","Sure Energy",0.0615,"N","MA",7.5
+"PseudoPeak Operations","Electricon",0.0586,"N","TX",5
+"PseudoPeak Operations","Good Energy",0.054,"N","TX",5
+"PseudoPeak Operations","Yukon Electric",0.0501,"Y","TX",5
+"PseudoPeak Operations","ChampStar",0.0666,"Y","TX",5
+"PseudoPeak Operations","World Energy",0.0684,"Y","TX",5
+"SampleWorks Group","World Energy",0.0659,"N","NJ",7
+"SampleWorks Group","Sure Energy",0.052,"Y","NJ",7
+"SampleWorks Group","Freedom National",0.0698,"Y","NJ",7
+"SampleWorks Group","ChampStar",0.0794,"N","NJ",7
+"SampleWorks Group","Pecona Energy",0.0782,"Y","NJ",7
+"SampleWorks Group","Acora",0.0665,"N","NJ",7
+"DemoCore Consulting","Pecona Energy",0.0617,"N","MD",5.1
+"DemoCore Consulting","World Energy",0.0706,"Y","MD",5.1
+"DemoCore Consulting","ChampStar",0.0724,"Y","MD",5.1
+"DemoCore Consulting","Green Energy",0.0553,"N","MD",5.1
+"DemoCore Consulting","Freedom National",0.065,"Y","MD",5.1
+"DemoCore Consulting","Yukon Electric",0.0667,"Y","MD",5.1
+"Fabricon Ridge Services","World Energy",0.0531,"N","NJ",7
+"Fabricon Ridge Services","Yukon Electric",0.0687,"N","NJ",7
+"MockStone Technologies","Electricon",0.0624,"N","MD",5.1
+"MockStone Technologies","Pecona Energy",0.0559,"N","MD",5.1
+"MockStone Technologies","Freedom National",0.079,"N","MD",5.1
+"MockStone Technologies","Acora",0.0514,"Y","MD",5.1
+"MockStone Technologies","Sure Energy",0.0644,"Y","MD",5.1
+"FictaWay Enterprises","Yukon Electric",0.0628,"N","NJ",7
+"FictaWay Enterprises","World Energy",0.0688,"N","NJ",7
+"FictaWay Enterprises","Green Energy",0.0651,"N","NJ",7
+"FictaWay Enterprises","Good Energy",0.0506,"Y","NJ",7
+"FictaWay Enterprises","Electricon",0.078,"Y","NJ",7
+"FictaWay Enterprises","Acora",0.0651,"N","NJ",7
+"Simulated Path Solutions","Sure Energy",0.0655,"Y","MD",5.1
+"Simulated Path Solutions","World Energy",0.0683,"Y","MD",5.1
+"Simulated Path Solutions","ChampStar",0.0547,"Y","MD",5.1
+"Simulated Path Solutions","Acora",0.0757,"Y","MD",5.1
+"Simulated Path Solutions","Pecona Energy",0.066,"Y","MD",5.1
+"Simulated Path Solutions","Green Energy",0.0675,"N","MD",5.1
+"Simulated Path Solutions","Electricon",0.0664,"N","MD",5.1
+"FauxTrail Operations","ChampStar",0.0532,"Y","NJ",7
+"FauxTrail Operations","Acora",0.0765,"N","NJ",7
+"FauxTrail Operations","Pecona Energy",0.0708,"Y","NJ",7
+"FauxTrail Operations","Yukon Electric",0.0737,"N","NJ",7
+"FauxTrail Operations","World Energy",0.0775,"N","NJ",7
+"FauxTrail Operations","Good Energy",0.066,"N","NJ",7
+"Imagix Industries","ChampStar",0.0577,"Y","CT",4.5
+"Imagix Industries","Good Energy",0.0657,"Y","CT",4.5
+"Imagix Industries","Electricon",0.0643,"Y","CT",4.5
+"Imagix Industries","Green Energy",0.076,"Y","CT",4.5
+"Imagix Industries","Acora",0.0714,"Y","CT",4.5
+"Imagix Industries","Yukon Electric",0.0739,"N","CT",4.5
+"Virtuon Strategy Group","Electricon",0.0702,"Y","MD",5.1
+"Imagbed Development","World Energy",0.0629,"Y","NJ",7
+"Imagbed Development","Good Energy",0.0574,"Y","NJ",7
+"NullNorth Enterprises","Electricon",0.0764,"N","CT",4.5
+"NullNorth Enterprises","Pecona Energy",0.0783,"Y","CT",4.5
+"NullNorth Enterprises","Acora",0.061,"N","CT",4.5
+"NullNorth Enterprises","Sure Energy",0.0584,"Y","CT",4.5
+"NullNorth Enterprises","Freedom National",0.0701,"N","CT",4.5
+"NullNorth Enterprises","World Energy",0.0691,"N","CT",4.5
+"NullNorth Enterprises","Good Energy",0.0578,"Y","CT",4.5
+"NullNorth Enterprises","ChampStar",0.0693,"Y","CT",4.5
+"FauxWorks Inc.","Good Energy",0.0655,"Y","NJ",7
+"FauxWorks Inc.","Yukon Electric",0.0715,"Y","NJ",7
+"FauxWorks Inc.","World Energy",0.0561,"N","NJ",7
+"FauxWorks Inc.","Acora",0.0772,"Y","NJ",7
+"NullWorld Partners","ChampStar",0.0791,"N","MA",7.5
+"NullWorld Partners","Pecona Energy",0.0752,"N","MA",7.5
+"NullWorld Partners","Yukon Electric",0.0754,"Y","MA",7.5
+"NullWorld Partners","Electricon",0.0663,"Y","MA",7.5
+"NullWorld Partners","World Energy",0.0517,"N","MA",7.5
+"NullWorld Partners","Freedom National",0.057,"Y","MA",7.5
+"Fauxora Strategies","Yukon Electric",0.0797,"N","TX",5
+"Fauxora Strategies","World Energy",0.0511,"Y","TX",5
+"Fauxora Strategies","Green Energy",0.0592,"N","TX",5
+"Fauxora Strategies","Sure Energy",0.0753,"Y","TX",5
+"MockZone Group","Electricon",0.0514,"N","TX",5
+"Mockora Corp","ChampStar",0.0597,"Y","TX",5
+"Mockora Corp","Green Energy",0.0614,"Y","TX",5
+"Mockora Corp","Sure Energy",0.0638,"N","TX",5
+"Mockora Corp","Freedom National",0.0518,"Y","TX",5
+"Mockora Corp","Electricon",0.0532,"Y","TX",5
+"Mockora Corp","Acora",0.0693,"Y","TX",5
+"Mockora Corp","Pecona Energy",0.0742,"N","TX",5
+"Repliicon Dynamics","Sure Energy",0.0797,"Y","MA",7.5
+"Repliicon Dynamics","Acora",0.0756,"Y","MA",7.5
+"Repliicon Dynamics","Freedom National",0.0568,"Y","MA",7.5
+"Repliicon Dynamics","Green Energy",0.0685,"Y","MA",7.5
+"Repliicon Dynamics","Good Energy",0.0576,"Y","MA",7.5
+"Repliicon Dynamics","World Energy",0.0625,"N","MA",7.5
+"Repliicon Dynamics","ChampStar",0.0674,"N","MA",7.5
+"MockPort Services","World Energy",0.0697,"N","TX",5
+"Simuinary Global","ChampStar",0.0537,"Y","TX",5
+"Simuinary Global","Good Energy",0.0599,"Y","TX",5
+"Simuinary Global","Freedom National",0.0771,"Y","TX",5
+"Simuinary Global","Electricon",0.0601,"Y","TX",5
+"VirtuScan Advisors","Green Energy",0.0573,"Y","MA",7.5
+"VirtuScan Advisors","World Energy",0.0631,"Y","MA",7.5
+"SampleScope Dynamics","World Energy",0.0541,"N","MA",7.5
+"SampleScope Dynamics","Pecona Energy",0.058,"Y","MA",7.5
+"SampleScope Dynamics","Yukon Electric",0.0716,"N","MA",7.5
+"SampleScope Dynamics","Green Energy",0.0777,"Y","MA",7.5
+"DemoNorth Resources","Freedom National",0.0661,"N","NJ",7
+"DemoNorth Resources","Electricon",0.0635,"N","NJ",7
+"DemoNorth Resources","Sure Energy",0.0759,"N","NJ",7
+"DemoNorth Resources","Pecona Energy",0.077,"Y","NJ",7
+"Synthitious Resources","ChampStar",0.0511,"N","TX",5
+"Synthitious Resources","World Energy",0.073,"N","TX",5
+"Synthitious Resources","Freedom National",0.0788,"Y","TX",5
+"Synthitious Resources","Yukon Electric",0.0578,"N","TX",5
+"Nullora Labs","Sure Energy",0.0755,"Y","CT",4.5
+"Nullora Labs","Electricon",0.0764,"N","CT",4.5
+"Nullora Labs","World Energy",0.0749,"N","CT",4.5
+"Nullora Labs","Pecona Energy",0.0564,"N","CT",4.5
+"Nullora Labs","Freedom National",0.0783,"N","CT",4.5
+"Nullora Labs","Good Energy",0.064,"Y","CT",4.5
+"Nullora Labs","ChampStar",0.0559,"N","CT",4.5
+"Nullora Labs","Yukon Electric",0.0638,"Y","CT",4.5
+"VirtuLand Development","Green Energy",0.0539,"Y","MD",5.1
+"VirtuLand Development","Sure Energy",0.0646,"N","MD",5.1
+"VirtuLand Development","World Energy",0.0539,"N","MD",5.1
+"VirtuLand Development","Electricon",0.0763,"Y","MD",5.1
+"SynthForm Innovations","Sure Energy",0.077,"N","NJ",7
+"SynthForm Innovations","Pecona Energy",0.0619,"N","NJ",7
+"SynthForm Innovations","Green Energy",0.057,"Y","NJ",7
+"SynthForm Innovations","Acora",0.0681,"N","NJ",7
+"SynthForm Innovations","Good Energy",0.0712,"N","NJ",7
+"SynthForm Innovations","World Energy",0.0746,"Y","NJ",7
+"SynthForm Innovations","Yukon Electric",0.0719,"Y","NJ",7
+"SynthForm Innovations","ChampStar",0.0565,"N","NJ",7
+"PlaceCast Dynamics","Acora",0.0565,"Y","TX",5
+"PlaceCast Dynamics","Freedom National",0.0773,"Y","TX",5
+"FauxWeb Industries","Sure Energy",0.0626,"Y","MA",7.5
+"FauxWeb Industries","Electricon",0.0644,"N","MA",7.5
+"FauxWeb Industries","World Energy",0.0761,"N","MA",7.5
+"SynthPort Associates","ChampStar",0.0517,"N","MA",7.5
+"SynthPort Associates","Yukon Electric",0.0542,"Y","MA",7.5
+"SynthPort Associates","Freedom National",0.0785,"Y","MA",7.5
+"SynthPort Associates","World Energy",0.0573,"N","MA",7.5
+"FauxNorth Inc.","Yukon Electric",0.0519,"Y","TX",5
+"FauxNorth Inc.","ChampStar",0.0544,"N","TX",5
+"FauxNorth Inc.","World Energy",0.0608,"Y","TX",5
+"FauxNorth Inc.","Electricon",0.0748,"Y","TX",5
+"FauxNorth Inc.","Acora",0.0586,"N","TX",5
+"FauxNorth Inc.","Pecona Energy",0.075,"N","TX",5
+"FauxNorth Inc.","Good Energy",0.0566,"N","TX",5
+"FauxNorth Inc.","Sure Energy",0.0511,"Y","TX",5
+"Fabrline Management","Good Energy",0.0741,"Y","CT",4.5
+"Fabrline Management","Acora",0.0626,"Y","CT",4.5
+"Fabrline Management","Yukon Electric",0.0759,"Y","CT",4.5
+"FabrScan Inc.","Electricon",0.0727,"Y","NJ",7
+"FabrScan Inc.","World Energy",0.0756,"Y","NJ",7
+"FabrScan Inc.","Green Energy",0.0505,"N","NJ",7
+"FabrScan Inc.","Acora",0.061,"N","NJ",7
+"FabrScan Inc.","Good Energy",0.0592,"Y","NJ",7
+"FabrScan Inc.","Pecona Energy",0.0762,"Y","NJ",7
+"FabrScan Inc.","Yukon Electric",0.0582,"N","NJ",7
+"Fictwave Industries","Freedom National",0.0546,"N","MA",7.5
+"Fictwave Industries","ChampStar",0.0694,"N","MA",7.5
+"Fictwave Industries","Electricon",0.0709,"Y","MA",7.5
+"Fictwave Industries","Green Energy",0.0778,"N","MA",7.5
+"Placeora LLC","Freedom National",0.0671,"Y","CT",4.5
+"Placeora LLC","Pecona Energy",0.068,"Y","CT",4.5
+"Placeora LLC","ChampStar",0.0527,"N","CT",4.5
+"Placeora LLC","Green Energy",0.059,"N","CT",4.5
+"Placeora LLC","Acora",0.067,"Y","CT",4.5
+"ProtoOak Development","Acora",0.0535,"N","MA",7.5
+"ProtoOak Development","Pecona Energy",0.053,"Y","MA",7.5
+"ProtoOak Development","World Energy",0.0572,"N","MA",7.5
+"ImagSite Global","Green Energy",0.0689,"N","NJ",7
+"ImagSite Global","Electricon",0.0708,"N","NJ",7
+"SynthNode Field Services","Freedom National",0.0773,"Y","NJ",7
+"SynthNode Field Services","Sure Energy",0.07,"Y","NJ",7
+"SynthNode Field Services","World Energy",0.0726,"N","NJ",7
+"SynthNode Field Services","ChampStar",0.0704,"Y","NJ",7
+"Synthgate Services","Electricon",0.0741,"Y","MD",5.1
+"Synthgate Services","Sure Energy",0.0657,"Y","MD",5.1
+"Replibed Management","Acora",0.0577,"N","MA",7.5
+"Replibed Management","Yukon Electric",0.052,"N","MA",7.5
+"Imagora Holdings","Pecona Energy",0.057,"N","TX",5
+"Imagora Holdings","World Energy",0.0644,"N","TX",5
+"Repliwave Solutions","Freedom National",0.0693,"Y","CT",4.5
+"Repliwave Solutions","Yukon Electric",0.0593,"N","CT",4.5
+"SampleHarbor Ventures","Green Energy",0.0551,"N","NJ",7
+"SampleHarbor Ventures","Good Energy",0.0655,"Y","NJ",7
+"SampleHarbor Ventures","Freedom National",0.0768,"N","NJ",7
+"VirtuSite Innovations","Acora",0.0638,"Y","NJ",7
+"Ficticon Business Services","Freedom National",0.053,"Y","MA",7.5
+"Ficticon Business Services","Pecona Energy",0.0676,"Y","MA",7.5
+"Ficticon Business Services","ChampStar",0.0731,"N","MA",7.5
+"Ficticon Business Services","Green Energy",0.0725,"Y","MA",7.5
+"Ficticon Business Services","Acora",0.0732,"Y","MA",7.5
+"Ficticon Business Services","Sure Energy",0.0705,"N","MA",7.5
+"Ficticon Business Services","Good Energy",0.0524,"N","MA",7.5
+"PlaceNet Industries","Sure Energy",0.058,"N","TX",5
+"PlaceNet Industries","Good Energy",0.052,"Y","TX",5
+"PlaceNet Industries","Electricon",0.0612,"N","TX",5
+"PlaceNet Industries","Freedom National",0.051,"N","TX",5
+"PlaceNet Industries","Yukon Electric",0.0799,"N","TX",5
+"PlaceNet Industries","Green Energy",0.0669,"N","TX",5
+"PlaceNet Industries","Pecona Energy",0.0641,"N","TX",5
+"PlaceNet Industries","Acora",0.0625,"N","TX",5
+"MockTrail Consulting Group","Electricon",0.0595,"Y","TX",5
+"MockTrail Consulting Group","Yukon Electric",0.059,"Y","TX",5
+"MockTrail Consulting Group","ChampStar",0.0607,"Y","TX",5
+"Fabrline Development","Electricon",0.0711,"N","CT",4.5
+"Fabrline Development","Yukon Electric",0.0692,"N","CT",4.5
+"Fabrline Development","Good Energy",0.0642,"N","CT",4.5
+"Fabrline Development","ChampStar",0.0688,"N","CT",4.5
+"Fabrline Development","Acora",0.0773,"Y","CT",4.5
+"Fabrline Development","Freedom National",0.053,"Y","CT",4.5
+"Fabrline Development","Sure Energy",0.0636,"N","CT",4.5
+"Fabrline Development","Green Energy",0.0644,"N","CT",4.5
+"Fabrinary Corp","World Energy",0.0683,"Y","TX",5
+"Fabrinary Corp","Electricon",0.0605,"Y","TX",5
+"Fabrinary Corp","Sure Energy",0.0675,"N","TX",5
+"Fabrinary Corp","ChampStar",0.0562,"Y","TX",5
+"Fabrinary Corp","Good Energy",0.0629,"N","TX",5
+"Fabrinary Corp","Green Energy",0.0678,"Y","TX",5
+"Fabrinary Corp","Freedom National",0.0789,"N","TX",5
+"Fabrinary Corp","Yukon Electric",0.0512,"Y","TX",5
+"NullWay LLC","Freedom National",0.0561,"Y","MA",7.5
+"NullWay LLC","Yukon Electric",0.0663,"Y","MA",7.5
+"NullWay LLC","Pecona Energy",0.0508,"Y","MA",7.5
+"FictSite Technologies","Green Energy",0.0508,"N","MD",5.1
+"FictSite Technologies","Good Energy",0.0557,"N","MD",5.1
+"FictSite Technologies","Acora",0.0787,"N","MD",5.1
+"FictSite Technologies","ChampStar",0.0635,"Y","MD",5.1
+"FictSite Technologies","Pecona Energy",0.0605,"N","MD",5.1
+"FictSite Technologies","Sure Energy",0.0561,"Y","MD",5.1
+"FictSite Technologies","Yukon Electric",0.0599,"N","MD",5.1
+"FictSite Technologies","World Energy",0.0541,"Y","MD",5.1
+"Virtuline Services","Sure Energy",0.0799,"Y","NJ",7
+"Virtuline Services","ChampStar",0.0502,"Y","NJ",7
+"Virtuline Services","Yukon Electric",0.0723,"Y","NJ",7
+"Virtuline Services","Electricon",0.0751,"Y","NJ",7
+"Virtuline Services","Good Energy",0.0668,"Y","NJ",7
+"Virtuline Services","Green Energy",0.072,"N","NJ",7
+"Virtuline Services","Acora",0.0799,"Y","NJ",7
+"PlacePort Partners","Good Energy",0.0577,"N","TX",5
+"PlacePort Partners","Acora",0.0664,"N","TX",5
+"PlacePort Partners","Pecona Energy",0.0503,"N","TX",5
+"PlacePort Partners","Sure Energy",0.0586,"Y","TX",5
+"MockSite Enterprises","World Energy",0.0616,"Y","MD",5.1
+"MockSite Enterprises","Green Energy",0.0715,"Y","MD",5.1
+"FabrType International","Yukon Electric",0.057,"N","MD",5.1
+"FabrType International","Electricon",0.0653,"N","MD",5.1
+"FabrType International","Green Energy",0.0632,"N","MD",5.1
+"FabrType International","Good Energy",0.0757,"N","MD",5.1
+"SimuBase Global","Yukon Electric",0.0786,"N","MA",7.5
+"SimuBase Global","World Energy",0.0665,"N","MA",7.5
+"SimuBase Global","Pecona Energy",0.0732,"N","MA",7.5
+"FabrPeak Holdings","Acora",0.0739,"N","MA",7.5
+"FabrPeak Holdings","World Energy",0.0656,"Y","MA",7.5
+"FabrPeak Holdings","Pecona Energy",0.0622,"Y","MA",7.5
+"FabrPeak Holdings","Yukon Electric",0.0551,"Y","MA",7.5
+"FabrPeak Holdings","Good Energy",0.0616,"N","MA",7.5
+"FabrPeak Holdings","ChampStar",0.0526,"Y","MA",7.5
+"FabrPeak Holdings","Sure Energy",0.0508,"N","MA",7.5
+"FabrPeak Holdings","Green Energy",0.0658,"N","MA",7.5
+"NullForm Operations","Acora",0.071,"N","CT",4.5
+"FauxScope Group","Green Energy",0.078,"N","MD",5.1
+"FauxScope Group","Electricon",0.0781,"N","MD",5.1
+"FauxScope Group","Yukon Electric",0.0658,"N","MD",5.1
+"FauxScope Group","Freedom National",0.0735,"N","MD",5.1
+"FauxScope Group","Pecona Energy",0.0707,"Y","MD",5.1
+"FauxScope Group","World Energy",0.0502,"N","MD",5.1
+"FauxScope Group","Sure Energy",0.0712,"N","MD",5.1
+"VirtuPoint Holdings","Freedom National",0.051,"N","CT",4.5
+"VirtuPoint Holdings","Electricon",0.0765,"Y","CT",4.5
+"VirtuPoint Holdings","Sure Energy",0.0722,"N","CT",4.5
+"RepliPort Solutions","World Energy",0.0635,"N","TX",5
+"RepliPort Solutions","Good Energy",0.0583,"Y","TX",5
+"RepliPort Solutions","Acora",0.0562,"N","TX",5
+"RepliPort Solutions","Freedom National",0.0678,"N","TX",5
+"RepliPort Solutions","Green Energy",0.0583,"N","TX",5
+"RepliPort Solutions","Electricon",0.0571,"N","TX",5
+"RepliPort Solutions","Pecona Energy",0.0621,"N","TX",5
+"PlaceSet Concepts","World Energy",0.0709,"N","NJ",7
+"PlaceSet Concepts","Electricon",0.065,"N","NJ",7
+"PlaceSet Concepts","Good Energy",0.0543,"N","NJ",7
+"PlaceSet Concepts","Green Energy",0.0754,"N","NJ",7
+"PlaceSet Concepts","Yukon Electric",0.0558,"Y","NJ",7
+"PlaceSet Concepts","Sure Energy",0.0727,"N","NJ",7
+"DemoTrail Solutions","Pecona Energy",0.0523,"N","MD",5.1
+"DemoTrail Solutions","Good Energy",0.0799,"N","MD",5.1
+"DemoTrail Solutions","World Energy",0.0535,"N","MD",5.1
+"DemoTrail Solutions","Electricon",0.0728,"Y","MD",5.1
+"DemoTrail Solutions","ChampStar",0.0646,"Y","MD",5.1
+"DemoTrail Solutions","Freedom National",0.0622,"N","MD",5.1
+"FauxForm Corp","Yukon Electric",0.0674,"Y","MA",7.5
+"FauxForm Corp","Freedom National",0.0667,"Y","MA",7.5
+"FauxForm Corp","Good Energy",0.0522,"N","MA",7.5
+"FauxForm Corp","Acora",0.0685,"Y","MA",7.5
+"FauxForm Corp","Sure Energy",0.0613,"N","MA",7.5
+"FauxForm Corp","Electricon",0.0756,"N","MA",7.5
+"FauxForm Corp","World Energy",0.0679,"Y","MA",7.5
+"SimuNorth Financial","Sure Energy",0.0649,"Y","NJ",7
+"SimuNorth Financial","ChampStar",0.0559,"Y","NJ",7
+"SimuNorth Financial","Good Energy",0.0771,"N","NJ",7
+"SimuNorth Financial","Green Energy",0.0738,"N","NJ",7
+"SimuNorth Financial","Yukon Electric",0.0524,"N","NJ",7
+"SimuNorth Financial","Electricon",0.0705,"N","NJ",7
+"PseudoType Ltd.","Electricon",0.0655,"Y","MA",7.5
+"PseudoType Ltd.","Green Energy",0.0727,"N","MA",7.5
+"PseudoType Ltd.","Pecona Energy",0.0522,"N","MA",7.5
+"PseudoType Ltd.","Good Energy",0.0706,"N","MA",7.5
+"ProtoScan Inc.","Green Energy",0.0698,"N","NJ",7
+"ProtoScan Inc.","Sure Energy",0.064,"Y","NJ",7
+"ProtoScan Inc.","Pecona Energy",0.0745,"Y","NJ",7
+"Mockix Financial","Freedom National",0.0722,"Y","CT",4.5
+"Mockix Financial","Good Energy",0.0548,"Y","CT",4.5
+"Protoitious Corp","Sure Energy",0.0561,"Y","TX",5
+"Protoitious Corp","Yukon Electric",0.0623,"Y","TX",5
+"Protoitious Corp","ChampStar",0.0705,"N","TX",5
+"Protoitious Corp","Acora",0.0537,"Y","TX",5
+"Protoitious Corp","Freedom National",0.0693,"N","TX",5
+"SampleOak Dynamics","Acora",0.0705,"Y","TX",5
+"SampleOak Dynamics","Sure Energy",0.0735,"N","TX",5
+"SampleOak Dynamics","World Energy",0.0554,"N","TX",5
+"Mockwave Financial","Acora",0.0772,"Y","NJ",7
+"TestLogic Solutions","Electricon",0.0713,"N","MD",5.1
+"TestLogic Solutions","ChampStar",0.0558,"N","MD",5.1
+"TestLogic Solutions","Green Energy",0.063,"N","MD",5.1
+"TestLogic Solutions","Yukon Electric",0.0674,"Y","MD",5.1
