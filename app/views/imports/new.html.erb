@@ -1,0 +1,21 @@
+<div class="space-y-6">
+  <div>
+    <h1>Import Quotes</h1>
+    <p class="text-muted">Upload a CSV file to import or update quotes.</p>
+  </div>
+
+  <div class="card max-w-lg">
+    <%= form_with url: imports_path, multipart: true do |f| %>
+      <div class="form-group">
+        <label for="file">CSV File</label>
+        <input type="file" name="import[file]" id="file" accept=".csv" class="form-control">
+        <p class="form-hint">Expected columns: Customer, Supplier, Quote, Tax Included, State, Tax Rate</p>
+      </div>
+
+      <div class="flex gap-3">
+        <%= f.submit "Upload", class: "btn btn-primary" %>
+        <%= link_to "Cancel", quotes_path, class: "btn btn-outline" %>
+      </div>
+    <% end %>
+  </div>
+</div>

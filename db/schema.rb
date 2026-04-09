@@ -52,6 +52,12 @@ ActiveRecord::Schema[8.1].define(version: 2026_04_09_154322) do
     t.check_constraint "name::text <> ''::text", name: "customers_name_not_empty"
   end
 
+  create_table "imports", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.string "status", default: "pending", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "quotes", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.bigint "customer_id", null: false

@@ -8,14 +8,22 @@ class QuotesImporterTest < ActiveSupport::TestCase
     Region.delete_all
   end
 
-  def fixture_file(name)
-    Rails.root.join("test/fixtures/files/#{name}")
+  def create_import(file_name)
+    import = Import.new
+    import.file.attach(
+      io: File.open(Rails.root.join("test/fixtures/files/#{file_name}")),
+      filename: file_name,
+      content_type: "text/csv"
+    )
+    import.save!
+    import
   end
 
   # -- successful imports --
 
   test "imports valid CSV and creates all records" do
-    result = QuotesImporter.new.import_quotes(fixture_file("valid_quotes.csv"))
+    import = create_import("valid_quotes.csv")
+    result = QuotesImporter.new.import_quotes(import.id)
 
     assert result.all_rows_imported?
     assert_empty result.errors
@@ -23,10 +31,12 @@ class QuotesImporterTest < ActiveSupport::TestCase
     assert_equal 2, Customer.count
     assert_equal 4, Supplier.count
     assert_equal 4, Quote.count
+    assert_equal "completed", import.reload.status
   end
 
   test "computes normalized_rate for tax-included quotes" do
-    QuotesImporter.new.import_quotes(fixture_file("valid_quotes.csv"))
+    import = create_import("valid_quotes.csv")
+    QuotesImporter.new.import_quotes(import.id)
 
     quote = Quote.joins(:customer, :supplier)
       .where(customers: { name: "Fictora Consulting Group" })
@@ -40,7 +50,8 @@ class QuotesImporterTest < ActiveSupport::TestCase
   end
 
   test "stores rate as-is for tax-excluded quotes" do
-    QuotesImporter.new.import_quotes(fixture_file("valid_quotes.csv"))
+    import = create_import("valid_quotes.csv")
+    QuotesImporter.new.import_quotes(import.id)
 
     quote = Quote.joins(:customer, :supplier)
       .where(customers: { name: "Fictora Consulting Group" })
@@ -51,7 +62,8 @@ class QuotesImporterTest < ActiveSupport::TestCase
   end
 
   test "handles zero tax rate" do
-    QuotesImporter.new.import_quotes(fixture_file("valid_quotes.csv"))
+    import = create_import("valid_quotes.csv")
+    QuotesImporter.new.import_quotes(import.id)
 
     quote = Quote.joins(:customer, :supplier)
       .where(customers: { name: "Fictora Consulting Group" })
@@ -64,15 +76,19 @@ class QuotesImporterTest < ActiveSupport::TestCase
   # -- idempotency and updates --
 
   test "re-importing same file is idempotent" do
-    QuotesImporter.new.import_quotes(fixture_file("valid_quotes.csv"))
-    QuotesImporter.new.import_quotes(fixture_file("valid_quotes.csv"))
+    import1 = create_import("valid_quotes.csv")
+    import2 = create_import("valid_quotes.csv")
+    QuotesImporter.new.import_quotes(import1.id)
+    QuotesImporter.new.import_quotes(import2.id)
 
     assert_equal 4, Quote.count
   end
 
   test "updates existing quotes with new values" do
-    QuotesImporter.new.import_quotes(fixture_file("valid_quotes.csv"))
-    QuotesImporter.new.import_quotes(fixture_file("updated_quotes.csv"))
+    import1 = create_import("valid_quotes.csv")
+    import2 = create_import("updated_quotes.csv")
+    QuotesImporter.new.import_quotes(import1.id)
+    QuotesImporter.new.import_quotes(import2.id)
 
     quote = Quote.joins(:customer, :supplier)
       .where(customers: { name: "Fictora Consulting Group" })
@@ -86,32 +102,29 @@ class QuotesImporterTest < ActiveSupport::TestCase
   # -- error handling --
 
   test "collects row-level errors and continues importing" do
-    result = QuotesImporter.new.import_quotes(fixture_file("malformed_quotes.csv"))
+    import = create_import("malformed_quotes.csv")
+    result = QuotesImporter.new.import_quotes(import.id)
 
     assert_not result.all_rows_imported?
     assert_equal 1, result.errors.size
     assert_match(/Row error/, result.errors.first)
     assert_equal 1, Quote.count
+    assert_equal "completed", import.reload.status
   end
 
   test "handles duplicate rows within file by keeping last" do
-    QuotesImporter.new.import_quotes(fixture_file("duplicate_quotes.csv"))
+    import = create_import("duplicate_quotes.csv")
+    QuotesImporter.new.import_quotes(import.id)
 
     assert_equal 1, Quote.count
     assert_in_delta 0.0700, Quote.first.rate.to_f, 0.000001
   end
 
-  # -- validation delegated to parser --
+  test "marks import as failed on bad headers" do
+    import = create_import("bad_headers.csv")
+    result = QuotesImporter.new.import_quotes(import.id)
 
-  test "raises for missing file" do
-    assert_raises(ArgumentError) do
-      QuotesImporter.new.import_quotes("/nonexistent/file.csv")
-    end
-  end
-
-  test "raises for bad headers" do
-    assert_raises(ArgumentError) do
-      QuotesImporter.new.import_quotes(fixture_file("bad_headers.csv"))
-    end
+    assert_not result.all_rows_imported?
+    assert_equal "failed", import.reload.status
   end
 end
