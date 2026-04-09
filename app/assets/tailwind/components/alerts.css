@@ -1,0 +1,46 @@
+.alert {
+  background: var(--base-bg-base);
+  color: var(--base-text-secondary);
+  padding: 16px;
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 20px;
+  border-radius: 4px;
+  gap: 16px;
+
+  svg {
+    height: 20px;
+    width: 20px;
+    color: var(--base-icon);
+    flex-shrink: 0;
+    align-self: start;
+  }
+
+  p {
+    font-weight: 400;
+    color: var(--base-text-secondary);
+  }
+
+  &.alert-info {
+    background: var(--bg-info-secondary);
+    color: var(--text-on-info-secondary);
+  }
+
+  &.alert-success {
+    background: var(--bg-success-secondary);
+    color: var(--text-on-success-secondary);
+  }
+
+  &.alert-danger,
+  &.alert-error {
+    background: var(--bg-danger-secondary);
+    color: var(--text-on-danger-secondary);
+  }
+
+  &.alert-warning {
+    background: var(--bg-warning-secondary);
+    color: var(--text-on-warning-secondary);
+  }
+}
