@@ -49,12 +49,12 @@ class QuotesImporter
   private
 
   def broadcast_quotes_list(import)
-    quotes = Quote.includes(:customer, :supplier).order(created_at: :desc)
+    quotes = Quote.includes(customer: :region, supplier: {}).order(created_at: :desc).limit(25)
     Turbo::StreamsChannel.broadcast_replace_to(
       import,
       target: "quotes_list",
       partial: "quotes/list",
-      locals: { quotes: quotes }
+      locals: { quotes: quotes, pagy: nil }
     )
   end
 
