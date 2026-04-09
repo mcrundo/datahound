@@ -4,7 +4,7 @@ services:
     environment:
       POSTGRES_USER: datahound
       POSTGRES_PASSWORD: password
-      POSTGRES_DB: datahound_development
+      POSTGRES_DB: datahound_production
     ports:
       - "5432:5432"
     volumes:
@@ -17,34 +17,35 @@ services:
 
   web:
     build: .
-    command: bin/rails server -b 0.0.0.0
+    command: bash -c "bin/rails db:prepare && bin/rails server -b 0.0.0.0 -p 3000"
     ports:
       - "3000:3000"
-    environment:
-      DATABASE_URL: postgres://datahound:password@db:5432/datahound_development
-      RAILS_ENV: development
+    environment: &app_env
+      DB_HOST: db
+      DB_USERNAME: datahound
+      DB_PASSWORD: password
+      DATAHOUND_DATABASE_PASSWORD: password
+      RAILS_ENV: production
       RAILS_LOG_TO_STDOUT: "true"
+      SECRET_KEY_BASE: placeholder_for_docker_compose_dev
     depends_on:
       db:
         condition: service_healthy
-    volumes:
-      - .:/rails
-      - bundle_cache:/usr/local/bundle
+    healthcheck:
+      test: curl -f http://localhost:3000/up || exit 1
+      interval: 5s
+      timeout: 5s
+      retries: 10
+      start_period: 30s
 
   worker:
     build: .
     command: bin/jobs
     environment:
-      DATABASE_URL: postgres://datahound:password@db:5432/datahound_development
-      RAILS_ENV: development
-      RAILS_LOG_TO_STDOUT: "true"
+      <<: *app_env
     depends_on:
-      db:
+      web:
         condition: service_healthy
-    volumes:
-      - .:/rails
-      - bundle_cache:/usr/local/bundle
 
 volumes:
   postgres_data:
-  bundle_cache:
