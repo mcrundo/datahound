@@ -23,6 +23,10 @@
     <header class="border-b border-(--divider-color) bg-(--bg-disabled)">
       <nav class="container mx-auto max-w-5xl flex items-center justify-between px-5 py-4">
         <a href="<%= root_path %>" class="text-lg font-semibold no-underline color-(--base-text)">Datahound</a>
+        <div class="flex items-center gap-4">
+          <%= link_to "Quotes", quotes_path, class: "text-sm no-underline color-(--base-text-secondary)" %>
+          <%= link_to "Customers", customers_path, class: "text-sm no-underline color-(--base-text-secondary)" %>
+        </div>
       </nav>
     </header>
 
