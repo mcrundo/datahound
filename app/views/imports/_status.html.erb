@@ -1,0 +1,19 @@
+<div id="import_<%= import.id %>_status">
+  <% case status.to_s %>
+  <% when "pending" %>
+    <div class="alert alert-info">Import queued, waiting to start...</div>
+  <% when "processing" %>
+    <div class="alert alert-info space-y-2">
+      <div class="text-sm">Importing... <%= rows_processed %> rows processed</div>
+      <div class="h-2 rounded-full bg-(--base-border-tertiary) overflow-hidden">
+        <div class="h-full rounded-full bg-(--bg-primary) animate-pulse w-full"></div>
+      </div>
+    </div>
+  <% when "completed" %>
+    <div class="alert alert-success">
+      Import complete — <%= rows_processed %> rows processed<%= " with #{error_count} error(s)" if error_count > 0 %>.
+    </div>
+  <% when "failed" %>
+    <div class="alert alert-danger">Import failed. Please check the file and try again.</div>
+  <% end %>
+</div>

@@ -4,35 +4,10 @@
     <%= link_to "Import CSV", new_import_path, class: "btn btn-primary" %>
   </div>
 
-  <% if @quotes.any? %>
-    <div class="table-responsive">
-      <table class="table">
-        <thead>
-          <tr class="border-b border-(--divider-color) text-left">
-            <th>Customer</th>
-            <th>Supplier</th>
-            <th class="text-right">Rate</th>
-            <th class="text-right">Normalized Rate</th>
-            <th class="text-center">Tax Included</th>
-          </tr>
-        </thead>
-        <tbody>
-          <% @quotes.each do |quote| %>
-            <tr class="border-b border-(--base-border-tertiary)">
-              <td><%= quote.customer.name %></td>
-              <td><%= quote.supplier.name %></td>
-              <td class="text-right"><%= number_with_precision(quote.rate, precision: 4) %></td>
-              <td class="text-right"><%= number_with_precision(quote.normalized_rate, precision: 4) %></td>
-              <td class="text-center"><%= quote.tax_included ? "Yes" : "No" %></td>
-            </tr>
-          <% end %>
-        </tbody>
-      </table>
-    </div>
-  <% else %>
-    <div class="card text-center">
-      <p class="text-(--base-text-tertiary)">No quotes yet.</p>
-      <p><%= link_to "Import your first CSV", new_import_path, class: "link" %></p>
-    </div>
+  <% if @import %>
+    <%= turbo_stream_from @import %>
+    <%= render "imports/status", import: @import, status: @import.status, rows_processed: 0, error_count: 0 %>
   <% end %>
+
+  <%= render "quotes/list", quotes: @quotes %>
 </div>

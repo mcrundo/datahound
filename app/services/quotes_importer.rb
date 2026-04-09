@@ -5,8 +5,10 @@ class QuotesImporter
   def import_quotes(import_id)
     import = Import.find(import_id)
     import.update!(status: "processing")
+    broadcast_status(import, "processing", rows_processed: 0)
 
     errors = []
+    rows_processed = 0
 
     import.file.open do |tempfile|
       batch = []
@@ -14,6 +16,7 @@ class QuotesImporter
       QuotesCsvParser.new.parse_csv(tempfile.path) do |row|
         if row[:error]
           errors << row[:error]
+          rows_processed += 1
           next
         end
 
@@ -21,21 +24,48 @@ class QuotesImporter
 
         if batch.size >= BATCH_SIZE
           upsert_batch(batch)
+          rows_processed += batch.size
+          broadcast_status(import, "processing", rows_processed: rows_processed)
           batch = []
         end
       end
 
-      upsert_batch(batch) if batch.any?
+      if batch.any?
+        upsert_batch(batch)
+        rows_processed += batch.size
+      end
     end
 
     import.update!(status: "completed")
+    broadcast_status(import, "completed", rows_processed: rows_processed, error_count: errors.size)
+    broadcast_quotes_list(import)
     Result.new(errors: errors)
   rescue ArgumentError => e
     import&.update!(status: "failed")
+    broadcast_status(import, "failed") if import
     Result.new(errors: [ e.message ])
   end
 
   private
+
+  def broadcast_quotes_list(import)
+    quotes = Quote.includes(:customer, :supplier).order(created_at: :desc)
+    Turbo::StreamsChannel.broadcast_replace_to(
+      import,
+      target: "quotes_list",
+      partial: "quotes/list",
+      locals: { quotes: quotes }
+    )
+  end
+
+  def broadcast_status(import, status, rows_processed: 0, error_count: 0)
+    Turbo::StreamsChannel.broadcast_replace_to(
+      import,
+      target: "import_#{import.id}_status",
+      partial: "imports/status",
+      locals: { import: import, status: status, rows_processed: rows_processed, error_count: error_count }
+    )
+  end
 
   def upsert_batch(batch)
     resolved = batch.map { |attrs| resolve_row(attrs) }

@@ -15,7 +15,7 @@ class ImportsController < ApplicationController
 
     if import.save
       ImportQuotesJob.perform_later(import.id)
-      redirect_to quotes_path, notice: "Import started, processing in background."
+      redirect_to quotes_path(import_id: import.id)
     else
       flash.now[:error] = import.errors.full_messages.to_sentence
       render :new, status: :unprocessable_entity
