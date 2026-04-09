@@ -1,0 +1,97 @@
+.form-group {
+  margin-bottom: 24px;
+  position: relative;
+
+  &:has(> input:required) label::after,
+  &:has(> select:required) label::after {
+    content: "*";
+    color: var(--text-danger);
+  }
+}
+
+.form-control {
+  background-color: var(--base-bg-low);
+  border: 1px solid var(--border-secondary);
+  border-radius: 6px;
+  box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.05);
+  color: var(--base-text-secondary);
+  display: block;
+  font-size: 14px;
+  line-height: 26px;
+  padding: 6px 12px;
+  width: 100%;
+
+  &::placeholder {
+    color: var(--base-text-tertiary);
+  }
+
+  &:focus,
+  &:focus-visible {
+    box-shadow: inset 0 0 0 1px var(--border-primary-hover);
+    border: 1px solid var(--border-primary-hover);
+  }
+
+  &.error {
+    border: 1px solid var(--border-danger);
+
+    &:focus,
+    &:focus-visible {
+      background: var(--base-bg-low);
+    }
+  }
+
+  &[disabled],
+  &[readonly] {
+    background: var(--bg-disabled);
+    border: 1px solid var(--border-disabled);
+    color: var(--base-text-tertiary);
+    cursor: not-allowed;
+  }
+}
+
+select {
+  background-color: var(--base-bg-low);
+  border: 1px solid var(--border-secondary);
+  border-radius: 6px;
+  box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.05);
+  cursor: pointer;
+  font-size: 14px;
+  line-height: 26px;
+  padding: 6px 12px;
+  width: 100%;
+
+  &[disabled] {
+    background-color: var(--bg-disabled);
+    border: 1px solid var(--border-disabled);
+    color: var(--base-text-tertiary);
+    cursor: not-allowed;
+  }
+
+  &:focus,
+  &:focus-visible {
+    box-shadow: inset 0 0 0 1px var(--border-primary-hover);
+    border: 1px solid var(--border-primary-hover);
+  }
+}
+
+label,
+.label {
+  color: var(--base-text-secondary);
+  display: block;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 20px;
+  margin-bottom: 5px;
+}
+
+.form-hint {
+  color: var(--base-text-secondary);
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 16px;
+  margin-top: 4px;
+
+  &.error {
+    color: var(--text-danger);
+  }
+}

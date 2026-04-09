@@ -1,1 +1,37 @@
 @import "tailwindcss";
+
+@variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --font-sans: InterVariable, ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+
+  --color-primary: var(--bg-primary);
+  --color-success: var(--bg-success);
+  --color-success-secondary: var(--bg-success-secondary);
+  --color-on-success: var(--text-on-success);
+  --color-on-success-secondary: var(--text-on-success-secondary);
+  --color-danger: var(--bg-danger);
+  --color-on-danger: var(--text-on-danger);
+
+  --color-mist-50: oklch(98.7% 0.002 197.1);
+  --color-mist-100: oklch(96.3% 0.002 197.1);
+  --color-mist-200: oklch(92.5% 0.005 214.3);
+  --color-mist-300: oklch(87.2% 0.007 219.6);
+  --color-mist-400: oklch(72.3% 0.014 214.4);
+  --color-mist-500: oklch(56% 0.021 213.5);
+  --color-mist-600: oklch(45% 0.017 213.2);
+  --color-mist-700: oklch(37.8% 0.015 216);
+  --color-mist-800: oklch(27.5% 0.011 216.9);
+  --color-mist-900: oklch(21.8% 0.008 223.9);
+  --color-mist-950: oklch(14.8% 0.004 228.8);
+}
+
+@import "./themes/light.css" layer(theme);
+@import "./themes/dark.css" layer(theme);
+
+@import "./components/base.css" layer(components);
+@import "./components/typography.css" layer(components);
+@import "./components/buttons.css" layer(components);
+@import "./components/cards.css" layer(components);
+@import "./components/forms.css" layer(components);
+@import "./components/alerts.css" layer(components);

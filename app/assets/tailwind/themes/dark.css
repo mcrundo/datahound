@@ -1,0 +1,70 @@
+:root.dark,
+.dark {
+  color-scheme: dark;
+
+  /*Primary*/
+  --bg-primary: var(--color-blue-700);
+  --bg-primary-hover: var(--color-blue-600);
+  --text-on-primary: var(--color-white);
+  --border-primary: var(--color-blue-500);
+  --border-primary-hover: var(--color-blue-400);
+  --text-primary: var(--color-blue-300);
+  --text-primary-hover: var(--color-blue-400);
+
+  /*Secondary*/
+  --bg-secondary: var(--color-gray-800);
+  --text-on-secondary: var(--color-gray-50);
+  --bg-secondary-hover: var(--color-gray-700);
+  --text-on-secondary-hover: var(--color-gray-50);
+  --border-secondary: var(--color-gray-700);
+
+  /*Danger*/
+  --bg-danger: var(--color-red-800);
+  --bg-danger-hover: var(--color-red-700);
+  --text-on-danger: var(--color-white);
+  --border-danger: var(--color-red-600);
+  --text-danger: var(--color-red-400);
+  --bg-danger-secondary: var(--color-red-950);
+  --text-on-danger-secondary: var(--color-red-200);
+
+  /*Success*/
+  --bg-success: var(--color-green-800);
+  --bg-success-hover: var(--color-green-700);
+  --text-on-success: var(--color-white);
+  --border-success: var(--color-green-400);
+  --text-success: var(--color-green-300);
+  --bg-success-secondary: var(--color-green-950);
+  --text-on-success-secondary: var(--color-green-100);
+
+  /*Info*/
+  --bg-info-secondary: var(--color-blue-950);
+  --text-on-info-secondary: var(--color-blue-100);
+
+  /*Warning*/
+  --bg-warning-secondary: var(--color-yellow-900);
+  --text-on-warning-secondary: var(--color-yellow-100);
+
+  /*Disabled*/
+  --bg-disabled: var(--color-gray-600);
+  --border-disabled: var(--color-gray-500);
+
+  /*Base*/
+  --base-text: var(--color-gray-100);
+  --base-text-secondary: var(--color-gray-200);
+  --base-text-tertiary: var(--color-gray-400);
+  --base-text-disabled: var(--color-gray-600);
+  --base-icon: var(--color-gray-400);
+  --base-bg-base: var(--color-gray-700);
+  --base-bg-low: var(--color-gray-800);
+  --base-border-primary: var(--color-gray-400);
+  --base-border-secondary: var(--color-gray-500);
+  --base-border-tertiary: #ffffff1a;
+  --base-border-focus: var(--color-gray-700);
+  --base-bg-hover: var(--color-gray-800);
+
+  --background: var(--color-gray-900);
+  --divider-color: var(--color-gray-800);
+  --text-muted: var(--color-gray-400);
+
+  background-color: var(--background);
+}
