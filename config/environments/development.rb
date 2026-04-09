@@ -84,5 +84,6 @@ Rails.application.configure do
     Bullet.enable = true
     Bullet.rails_logger = true
     Bullet.add_footer = true
+    Bullet.add_safelist type: :unused_eager_loading, class_name: "ActiveStorage::Attachment", association: :record
   end
 end
