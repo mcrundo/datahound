@@ -35,10 +35,10 @@
         </p>
         <div class="flex gap-2">
           <% if pagy.previous %>
-            <%= link_to "Previous", url_for(page: pagy.previous), class: "btn btn-sm btn-outline" %>
+            <%= link_to "Previous", url_for(request.params.merge(page: pagy.previous)), class: "btn btn-sm btn-outline" %>
           <% end %>
           <% if pagy.next %>
-            <%= link_to "Next", url_for(page: pagy.next), class: "btn btn-sm btn-outline" %>
+            <%= link_to "Next", url_for(request.params.merge(page: pagy.next)), class: "btn btn-sm btn-outline" %>
           <% end %>
         </div>
       </nav>
