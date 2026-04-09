@@ -1,0 +1,73 @@
+<div class="space-y-6">
+  <h1>Import Pipeline</h1>
+  <%= render "docs/nav" %>
+
+  <div class="card space-y-4">
+    <h3>Flow</h3>
+    <pre><code>User uploads CSV
+  → ImportsController creates Import record (Active Storage)
+  → ImportQuotesJob enqueued (solid_queue)
+  → QuotesImporter.new.import_quotes(import_id)
+    → Import status → "processing"
+    → QuotesCsvParser.new.parse_csv(file_path)
+      → Validates file existence and headers
+      → Yields { attributes: ... } or { error: ... } per row
+    → Batch rows (1000 at a time)
+    → resolve_row: find_or_create Region, Customer, Supplier
+    → normalize_rate: strip tax from tax-inclusive quotes
+    → upsert_all with composite unique key
+    → Broadcast progress via Turbo Stream
+  → Import status → "completed" / "failed"
+  → Broadcast final status + updated quotes list</code></pre>
+  </div>
+
+  <div class="card space-y-4">
+    <h3>Key Properties</h3>
+    <ul class="space-y-2">
+      <li><strong>Streaming</strong> — CSV.foreach processes line-by-line. Memory stays flat regardless of file size (500MB+).</li>
+      <li><strong>Idempotent</strong> — upsert_all with unique_by: [customer_id, supplier_id]. Re-importing the same file is safe.</li>
+      <li><strong>Fault tolerant</strong> — Row-level errors are collected and reported. Bad rows don't halt the import.</li>
+      <li><strong>Real-time feedback</strong> — Turbo Streams broadcast status after each batch. No polling.</li>
+    </ul>
+  </div>
+
+  <div class="card space-y-4">
+    <h3>Error Handling</h3>
+    <table class="table">
+      <thead>
+        <tr class="border-b border-(--divider-color) text-left">
+          <th>Error Type</th>
+          <th>Where</th>
+          <th>Behavior</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="border-b border-(--base-border-tertiary)">
+          <td>Missing file / bad headers</td>
+          <td>QuotesCsvParser</td>
+          <td>Raises ArgumentError → Import marked "failed"</td>
+        </tr>
+        <tr class="border-b border-(--base-border-tertiary)">
+          <td>Malformed row</td>
+          <td>QuotesCsvParser</td>
+          <td>Returns { error: ... } → collected, import continues</td>
+        </tr>
+        <tr class="border-b border-(--base-border-tertiary)">
+          <td>Import record deleted</td>
+          <td>ImportQuotesJob</td>
+          <td>discard_on ActiveRecord::RecordNotFound</td>
+        </tr>
+        <tr class="border-b border-(--base-border-tertiary)">
+          <td>Database deadlock</td>
+          <td>ImportQuotesJob</td>
+          <td>retry_on with polynomial backoff (3 attempts)</td>
+        </tr>
+        <tr class="border-b border-(--base-border-tertiary)">
+          <td>Invalid content type</td>
+          <td>Import model</td>
+          <td>Validation error → 422 in controller</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

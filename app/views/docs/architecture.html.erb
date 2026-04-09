@@ -1,0 +1,65 @@
+<div class="space-y-6">
+  <h1>Architecture</h1>
+  <%= render "docs/nav" %>
+
+  <div class="card space-y-4">
+    <h3>Layer Diagram</h3>
+    <pre><code>┌─────────────────────────────────────────┐
+│            BOUNDARY LAYER               │
+│  Controllers, Jobs                      │
+│  (receive input, delegate to services)  │
+└─────────────────────────────────────────┘
+                    ↓
+┌─────────────────────────────────────────┐
+│           SERVICE LAYER                 │
+│  QuotesImporter, QuotesCsvParser        │
+│  (business logic, isolated, testable)   │
+└─────────────────────────────────────────┘
+                    ↓
+┌─────────────────────────────────────────┐
+│            MODEL LAYER                  │
+│  Quote, Customer, Supplier, Region      │
+│  (database access, validations, scopes) │
+└─────────────────────────────────────────┘
+                    ↓
+┌─────────────────────────────────────────┐
+│            DATABASE LAYER               │
+│  PostgreSQL — constraints, indexes      │
+└─────────────────────────────────────────┘</code></pre>
+  </div>
+
+  <div class="card space-y-4">
+    <h3>Key Principles</h3>
+    <ul class="space-y-2">
+      <li><strong>Business logic in services, not models.</strong> QuotesImporter owns the import lifecycle. Quote model has scopes and validations only.</li>
+      <li><strong>Jobs are thin boundary classes.</strong> ImportQuotesJob is 9 lines — finds the import, delegates to QuotesImporter.</li>
+      <li><strong>Database constraints enforce correctness.</strong> NOT NULL, foreign keys, composite unique indexes. Validations are for UX.</li>
+      <li><strong>Streaming for large files.</strong> CSV.foreach processes line-by-line. Memory stays flat for 500MB+ files.</li>
+    </ul>
+  </div>
+
+  <div class="card space-y-4">
+    <h3>Service Classes</h3>
+    <table class="table">
+      <thead>
+        <tr class="border-b border-(--divider-color) text-left">
+          <th>Class</th>
+          <th>Responsibility</th>
+          <th>Pattern</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="border-b border-(--base-border-tertiary)">
+          <td><code>QuotesImporter</code></td>
+          <td>Orchestrates import: finds Import, opens file, batches, upserts, manages status</td>
+          <td>ThingDoer / do_thing</td>
+        </tr>
+        <tr class="border-b border-(--base-border-tertiary)">
+          <td><code>QuotesCsvParser</code></td>
+          <td>Validates file, parses rows, yields attributes or errors</td>
+          <td>Stateless, no ActiveRecord</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
