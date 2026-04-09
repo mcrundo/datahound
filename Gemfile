@@ -17,6 +17,9 @@ gem "stimulus-rails"
 # Use Tailwind CSS [https://github.com/rails/tailwindcss-rails]
 gem "tailwindcss-rails"
 
+# CSV parsing (no longer a default gem in Ruby 3.4+)
+gem "csv"
+
 # Catch unsafe migrations before they run [https://github.com/ankane/strong_migrations]
 gem "strong_migrations"
 
