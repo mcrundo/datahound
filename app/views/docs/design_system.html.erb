@@ -1,0 +1,89 @@
+<div class="space-y-6">
+  <h1>Design System</h1>
+  <%= render "docs/nav" %>
+
+  <div class="card space-y-4">
+    <h3>Design Tokens</h3>
+    <p>All colors are semantic tokens defined in theme files, not raw Tailwind values. Use <code>bg-(--bg-primary)</code> instead of <code>bg-blue-700</code>.</p>
+    <table class="table">
+      <thead>
+        <tr class="border-b border-(--divider-color) text-left">
+          <th>Token</th>
+          <th>Purpose</th>
+          <th>Example</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="border-b border-(--base-border-tertiary)">
+          <td><code>--bg-primary</code></td>
+          <td>Primary action backgrounds</td>
+          <td>Buttons, selected states</td>
+        </tr>
+        <tr class="border-b border-(--base-border-tertiary)">
+          <td><code>--bg-danger</code></td>
+          <td>Destructive actions</td>
+          <td>Delete buttons, error alerts</td>
+        </tr>
+        <tr class="border-b border-(--base-border-tertiary)">
+          <td><code>--base-text</code></td>
+          <td>Primary body text</td>
+          <td>Headings, content</td>
+        </tr>
+        <tr class="border-b border-(--base-border-tertiary)">
+          <td><code>--text-muted</code></td>
+          <td>Secondary/helper text</td>
+          <td>Labels, hints</td>
+        </tr>
+        <tr class="border-b border-(--base-border-tertiary)">
+          <td><code>--divider-color</code></td>
+          <td>Borders and separators</td>
+          <td>Table rows, section dividers</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="card space-y-4">
+    <h3>Themes</h3>
+    <p>Two themes defined in <code>app/assets/tailwind/themes/</code>:</p>
+    <ul class="space-y-1">
+      <li><code>light.css</code> — Default. Maps tokens to Tailwind gray/blue/red/green palette.</li>
+      <li><code>dark.css</code> — Activated by adding <code>.dark</code> class to <code>&lt;html&gt;</code>.</li>
+    </ul>
+  </div>
+
+  <div class="card space-y-4">
+    <h3>Components</h3>
+    <p>CSS component classes in <code>app/assets/tailwind/components/</code>:</p>
+    <table class="table">
+      <thead>
+        <tr class="border-b border-(--divider-color) text-left">
+          <th>File</th>
+          <th>Classes</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="border-b border-(--base-border-tertiary)">
+          <td><code>typography.css</code></td>
+          <td>h1-h6, .link, .text-muted, .with-border, code</td>
+        </tr>
+        <tr class="border-b border-(--base-border-tertiary)">
+          <td><code>buttons.css</code></td>
+          <td>.btn, .btn-primary, .btn-danger, .btn-success, .btn-outline, .btn-sm/.btn-lg</td>
+        </tr>
+        <tr class="border-b border-(--base-border-tertiary)">
+          <td><code>cards.css</code></td>
+          <td>.card</td>
+        </tr>
+        <tr class="border-b border-(--base-border-tertiary)">
+          <td><code>forms.css</code></td>
+          <td>.form-group, .form-control, label, .form-hint</td>
+        </tr>
+        <tr class="border-b border-(--base-border-tertiary)">
+          <td><code>alerts.css</code></td>
+          <td>.alert, .alert-info, .alert-success, .alert-danger, .alert-warning</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

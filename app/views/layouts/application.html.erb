@@ -26,6 +26,9 @@
         <div class="flex items-center gap-4">
           <%= link_to "Quotes", quotes_path, class: "text-sm no-underline color-(--base-text-secondary)" %>
           <%= link_to "Customers", customers_path, class: "text-sm no-underline color-(--base-text-secondary)" %>
+          <% if Rails.env.local? %>
+            <%= link_to "Docs", docs_root_path, class: "text-sm no-underline color-(--text-primary)" %>
+          <% end %>
         </div>
       </nav>
     </header>

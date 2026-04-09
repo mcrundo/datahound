@@ -1,0 +1,60 @@
+<div class="space-y-6">
+  <h1>Data Model</h1>
+  <%= render "docs/nav" %>
+
+  <div class="card space-y-4">
+    <h3>Entity Relationships</h3>
+    <pre><code>Region (1) ──── (many) Customer (1) ──── (many) Quote (many) ──── (1) Supplier</code></pre>
+    <p class="text-muted">Four normalized tables (3NF). See <code>docs/erd.md</code> for the full Mermaid diagram.</p>
+  </div>
+
+  <div class="card space-y-4">
+    <h3>Tables</h3>
+    <table class="table">
+      <thead>
+        <tr class="border-b border-(--divider-color) text-left">
+          <th>Table</th>
+          <th>Key Columns</th>
+          <th>Constraints</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="border-b border-(--base-border-tertiary)">
+          <td><code>regions</code></td>
+          <td>abbreviation, country_code, tax_rate</td>
+          <td>Unique on [abbreviation, country_code]</td>
+        </tr>
+        <tr class="border-b border-(--base-border-tertiary)">
+          <td><code>customers</code></td>
+          <td>name, region_id (FK)</td>
+          <td>Unique on name</td>
+        </tr>
+        <tr class="border-b border-(--base-border-tertiary)">
+          <td><code>suppliers</code></td>
+          <td>name</td>
+          <td>Unique on name</td>
+        </tr>
+        <tr class="border-b border-(--base-border-tertiary)">
+          <td><code>quotes</code></td>
+          <td>rate, tax_included, normalized_rate</td>
+          <td>Unique on [customer_id, supplier_id], FK to both</td>
+        </tr>
+        <tr class="border-b border-(--base-border-tertiary)">
+          <td><code>imports</code></td>
+          <td>status, file (Active Storage)</td>
+          <td>NOT NULL on status</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="card space-y-4">
+    <h3>Design Decisions</h3>
+    <ul class="space-y-2">
+      <li><strong>Region instead of State</strong> — avoids ambiguity with software "state"; extensible to non-US markets.</li>
+      <li><strong>tax_rate on Region</strong> — 3NF eliminates the transitive dependency (customer → region → tax_rate).</li>
+      <li><strong>normalized_rate stored on import</strong> — enables DB-level sorting/filtering without runtime computation.</li>
+      <li><strong>Composite unique index on Quote</strong> — enforces one quote per customer-supplier pair; enables idempotent upserts.</li>
+    </ul>
+  </div>
+</div>
