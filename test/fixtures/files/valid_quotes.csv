@@ -1,0 +1,5 @@
+"Customer","Supplier","Quote","Tax Included","State","Tax Rate"
+"Fictora Consulting Group","Yukon Electric",0.0662,"Y","MA",7.5
+"Fictora Consulting Group","Good Energy",0.0723,"N","MA",7.5
+"NullPoint Enterprises","Pecona Energy",0.0704,"Y","TX",5
+"NullPoint Enterprises","Sure Energy",0.0792,"Y","TX",5

@@ -1,0 +1,3 @@
+"Customer","Supplier","Quote","Tax Included","State","Tax Rate"
+"Valid Corp","Yukon Electric",0.0662,"Y","MA",7.5
+"","Bad Supplier",0.0500,"N","TX",5

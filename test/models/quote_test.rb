@@ -38,11 +38,12 @@ class QuoteTest < ActiveSupport::TestCase
     quote = Quote.new(
       customer: customers(:nullpoint),
       supplier: suppliers(:good_energy),
-      rate: 0.0650,
+      rate: nil,
       tax_included: false,
       normalized_rate: 0
     )
-    assert_not quote.valid?
+    quote.valid?
+    assert_includes quote.errors.attribute_names, :normalized_rate
   end
 
   test "customer and supplier pair must be unique" do
