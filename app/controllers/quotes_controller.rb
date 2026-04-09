@@ -1,6 +1,9 @@
 class QuotesController < ApplicationController
   def index
-    @quotes = Quote.includes(:customer, :supplier).order(created_at: :desc)
+    @pagy, @quotes = pagy(
+      Quote.includes(customer: :region, supplier: {}).order(created_at: :desc),
+      limit: 25
+    )
     @import = Import.find_by(id: params[:import_id])
   end
 end

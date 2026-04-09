@@ -9,5 +9,5 @@
     <%= render "imports/status", import: @import, status: @import.status, rows_processed: 0, error_count: 0 %>
   <% end %>
 
-  <%= render "quotes/list", quotes: @quotes %>
+  <%= render "quotes/list", quotes: @quotes, pagy: @pagy %>
 </div>

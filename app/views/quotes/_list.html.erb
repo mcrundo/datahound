@@ -6,9 +6,11 @@
           <tr class="border-b border-(--divider-color) text-left">
             <th>Customer</th>
             <th>Supplier</th>
-            <th class="text-right">Rate</th>
-            <th class="text-right">Normalized Rate</th>
+            <th class="text-right">Quote</th>
             <th class="text-center">Tax Included</th>
+            <th>State</th>
+            <th class="text-right">Tax Rate</th>
+            <th class="text-right">Normalized Rate</th>
           </tr>
         </thead>
         <tbody>
@@ -17,13 +19,30 @@
               <td><%= quote.customer.name %></td>
               <td><%= quote.supplier.name %></td>
               <td class="text-right"><%= number_with_precision(quote.rate, precision: 4) %></td>
-              <td class="text-right"><%= number_with_precision(quote.normalized_rate, precision: 4) %></td>
               <td class="text-center"><%= quote.tax_included ? "Yes" : "No" %></td>
+              <td><%= quote.customer.region.abbreviation %></td>
+              <td class="text-right"><%= number_with_precision(quote.customer.region.tax_rate, precision: 2) %>%</td>
+              <td class="text-right"><%= number_with_precision(quote.normalized_rate, precision: 4) %></td>
             </tr>
           <% end %>
         </tbody>
       </table>
     </div>
+    <% if pagy && pagy.last > 1 %>
+      <nav class="flex items-center justify-between pt-4">
+        <p class="text-sm text-muted">
+          Showing <%= pagy.from %>-<%= pagy.to %> of <%= pagy.count %> quotes
+        </p>
+        <div class="flex gap-2">
+          <% if pagy.previous %>
+            <%= link_to "Previous", url_for(page: pagy.previous), class: "btn btn-sm btn-outline" %>
+          <% end %>
+          <% if pagy.next %>
+            <%= link_to "Next", url_for(page: pagy.next), class: "btn btn-sm btn-outline" %>
+          <% end %>
+        </div>
+      </nav>
+    <% end %>
   <% else %>
     <div class="card text-center">
       <p class="text-(--base-text-tertiary)">No quotes yet.</p>
