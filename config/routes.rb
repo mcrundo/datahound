@@ -11,6 +11,7 @@ Rails.application.routes.draw do
 
   resources :imports, only: [ :new, :create ]
   resources :quotes, only: [ :index ]
+  resources :customers, only: [ :index ]
 
   root "quotes#index"
 end
