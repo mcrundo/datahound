@@ -2,14 +2,43 @@ default: &default
   adapter: postgresql
   encoding: unicode
   max_connections: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  host: <%= ENV["DB_HOST"] %>
+  username: <%= ENV["DB_USERNAME"] %>
+  password: <%= ENV["DB_PASSWORD"] %>
 
 development:
-  <<: *default
-  database: datahound_development
+  primary:
+    <<: *default
+    database: datahound_development
+  cache:
+    <<: *default
+    database: datahound_development_cache
+    migrations_paths: db/cache_migrate
+  queue:
+    <<: *default
+    database: datahound_development_queue
+    migrations_paths: db/queue_migrate
+  cable:
+    <<: *default
+    database: datahound_development_cable
+    migrations_paths: db/cable_migrate
 
 test:
-  <<: *default
-  database: datahound_test
+  primary:
+    <<: *default
+    database: datahound_test
+  cache:
+    <<: *default
+    database: datahound_test_cache
+    migrations_paths: db/cache_migrate
+  queue:
+    <<: *default
+    database: datahound_test_queue
+    migrations_paths: db/queue_migrate
+  cable:
+    <<: *default
+    database: datahound_test_cable
+    migrations_paths: db/cable_migrate
 
 production:
   primary: &primary_production
