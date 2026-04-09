@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+set -eo pipefail
+
+# Lightweight pre-commit hook: runs RuboCop and ERB Lint on staged files only.
+# Installed automatically by bin/setup.
+
+STAGED_RB=$(git diff --cached --name-only --diff-filter=ACM -- '*.rb')
+STAGED_ERB=$(git diff --cached --name-only --diff-filter=ACM -- '*.erb' '*.html.erb')
+
+if [ -n "$STAGED_RB" ]; then
+  echo "Pre-commit: RuboCop"
+  bundle exec rubocop --force-exclusion $STAGED_RB
+fi
+
+if [ -n "$STAGED_ERB" ]; then
+  echo "Pre-commit: ERB Lint"
+  bundle exec erb_lint $STAGED_ERB
+fi
