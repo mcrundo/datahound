@@ -28,9 +28,7 @@ class ImportsControllerTest < ActionDispatch::IntegrationTest
     assert import.file.attached?
     assert_equal "pending", import.status
 
-    assert_redirected_to quotes_path
-    follow_redirect!
-    assert_match(/Import started/, response.body)
+    assert_redirected_to quotes_path(import_id: Import.last.id)
   end
 
   test "rejects missing file" do
