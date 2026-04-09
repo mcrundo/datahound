@@ -2,27 +2,37 @@ class QuotesImporter
   BATCH_SIZE = 1000
   COUNTRY_CODE = "US"
 
-  def import_quotes(file_path)
+  def import_quotes(import_id)
+    import = Import.find(import_id)
+    import.update!(status: "processing")
+
     errors = []
-    batch = []
 
-    QuotesCsvParser.new.parse_csv(file_path) do |row|
-      if row[:error]
-        errors << row[:error]
-        next
+    import.file.open do |tempfile|
+      batch = []
+
+      QuotesCsvParser.new.parse_csv(tempfile.path) do |row|
+        if row[:error]
+          errors << row[:error]
+          next
+        end
+
+        batch << row[:attributes]
+
+        if batch.size >= BATCH_SIZE
+          upsert_batch(batch)
+          batch = []
+        end
       end
 
-      batch << row[:attributes]
-
-      if batch.size >= BATCH_SIZE
-        upsert_batch(batch)
-        batch = []
-      end
+      upsert_batch(batch) if batch.any?
     end
 
-    upsert_batch(batch) if batch.any?
-
+    import.update!(status: "completed")
     Result.new(errors: errors)
+  rescue ArgumentError => e
+    import&.update!(status: "failed")
+    Result.new(errors: [ e.message ])
   end
 
   private
