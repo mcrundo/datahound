@@ -20,6 +20,9 @@ gem "tailwindcss-rails"
 # CSV parsing (no longer a default gem in Ruby 3.4+)
 gem "csv"
 
+# Lightweight pagination [https://github.com/ddnexus/pagy]
+gem "pagy"
+
 # Catch unsafe migrations before they run [https://github.com/ankane/strong_migrations]
 gem "strong_migrations"
 
