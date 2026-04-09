@@ -9,5 +9,9 @@
     <%= render "imports/status", import: @import, status: @import.status, rows_processed: 0, error_count: 0 %>
   <% end %>
 
-  <%= render "quotes/list", quotes: @quotes, pagy: @pagy %>
+  <%= render "quotes/filters" %>
+
+  <%= turbo_frame_tag "quotes_table" do %>
+    <%= render "quotes/list", quotes: @quotes, pagy: @pagy %>
+  <% end %>
 </div>

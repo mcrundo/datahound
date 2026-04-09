@@ -27,4 +27,50 @@ class QuotesControllerTest < ActionDispatch::IntegrationTest
     get quotes_path, params: { page: 1 }
     assert_response :success
   end
+
+  # -- filters --
+
+  test "filters by region" do
+    get quotes_path, params: { region: "MA" }
+    assert_response :success
+  end
+
+  test "filters by supplier" do
+    get quotes_path, params: { supplier_id: suppliers(:yukon).id }
+    assert_response :success
+  end
+
+  test "filters by tax included" do
+    get quotes_path, params: { tax_included: "true" }
+    assert_response :success
+  end
+
+  test "combines multiple filters" do
+    get quotes_path, params: { region: "MA", tax_included: "true" }
+    assert_response :success
+  end
+
+  # -- sorting --
+
+  test "sorts by rate ascending" do
+    get quotes_path, params: { sort: "rate_asc" }
+    assert_response :success
+  end
+
+  test "sorts by customer name" do
+    get quotes_path, params: { sort: "customer_asc" }
+    assert_response :success
+  end
+
+  test "ignores invalid sort key" do
+    get quotes_path, params: { sort: "invalid" }
+    assert_response :success
+  end
+
+  # -- turbo frame --
+
+  test "responds to turbo frame requests" do
+    get quotes_path, params: { region: "MA" }, headers: { "Turbo-Frame" => "quotes_table" }
+    assert_response :success
+  end
 end
