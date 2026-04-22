@@ -1,8 +1,9 @@
 class Import < ApplicationRecord
   has_one_attached :file
 
+  enum :status, { pending: "pending", processing: "processing", completed: "completed", failed: "failed" }, validate: true
+
   validates :file, presence: true
-  validates :status, presence: true, inclusion: { in: %w[pending processing completed failed] }
   validate :acceptable_file
 
   private

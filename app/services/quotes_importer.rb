@@ -4,7 +4,7 @@ class QuotesImporter
 
   def import_quotes(import_id)
     import = Import.find(import_id)
-    import.update!(status: "processing")
+    import.processing!
     broadcast_status(import, "processing", rows_processed: 0)
 
     errors = []
@@ -36,12 +36,12 @@ class QuotesImporter
       end
     end
 
-    import.update!(status: "completed")
+    import.completed!
     broadcast_status(import, "completed", rows_processed: rows_processed, error_count: errors.size)
     broadcast_quotes_list(import)
     Result.new(errors: errors)
   rescue ArgumentError => e
-    import&.update!(status: "failed")
+    import&.failed!
     broadcast_status(import, "failed") if import
     Result.new(errors: [ e.message ])
   end
